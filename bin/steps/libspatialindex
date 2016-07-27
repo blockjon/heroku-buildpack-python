@@ -2,10 +2,12 @@
 mkdir libspatialindex
 cd libspatialindex
 curl -O http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz
+tar -zxvf spatialindex-src-1.8.5.tar.gz
+cd spatialindex-src-1.8.5
 ./configure
 make
 make install
 
-cd ../
+cd ../../
 
 exit 0
