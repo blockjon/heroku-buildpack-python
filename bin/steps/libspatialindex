@@ -1,0 +1,11 @@
+# Install dependencies with Pip.
+mkdir libspatialindex
+cd libspatialindex
+curl -O http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz
+./configure
+make
+make install
+
+cd ../
+
+exit 0
