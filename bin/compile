@@ -207,10 +207,11 @@ sub-env $BIN_DIR/steps/geo-libs
 # GDAL support.
 source $BIN_DIR/steps/gdal
 
+# Install libspatialindex
+source $BIN_DIR/steps/libspatialindex
+
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
-
-source $BIN_DIR/steps/libspatialindex
 
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
