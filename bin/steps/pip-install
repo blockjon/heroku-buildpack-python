@@ -1,11 +1,11 @@
 # Install dependencies with Pip.
-puts-cmd "SPATIALINDEX_C_LIBRARY=/app/libspatialindex pip install -r requirements.txt"
+puts-cmd "SPATIALINDEX_C_LIBRARY=/app/libspatialindex/lib pip install -r requirements.txt"
 
 [ ! "$FRESH_PYTHON" ] && bpwatch start pip_install
 [ "$FRESH_PYTHON" ] && bpwatch start pip_install_first
 
 set +e
-SPATIALINDEX_C_LIBRARY=/app/libspatialindex /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --disable-pip-version-check --no-cache-dir 2>&1 | tee $WARNINGS_LOG | cleanup | indent
+SPATIALINDEX_C_LIBRARY=/app/libspatialindex/lib /app/.heroku/python/bin/pip install -r requirements.txt --exists-action=w --src=./.heroku/src --disable-pip-version-check --no-cache-dir 2>&1 | tee $WARNINGS_LOG | cleanup | indent
 PIP_STATUS="${PIPESTATUS[0]}"
 set -e
 
